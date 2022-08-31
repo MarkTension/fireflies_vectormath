@@ -1,18 +1,14 @@
 import unittest
-import main
 from main import Fireflies, Params
-
-
 
 
 class test_vectormath(unittest.TestCase):
 
-
-    def setUp(self) -> None:
+    def setUp (self) -> None:
         self.fireflies = Fireflies(Params)
 
     def test_timechange(self):
-        
+
         phase1 = self.fireflies.phases.copy()
         # self.fireflies.step()
         self.fireflies.simulate(num_steps=2000)
@@ -24,4 +20,6 @@ class test_vectormath(unittest.TestCase):
         self.fireflies.simulate(num_steps=2000)
         self.assertTrue(max(self.fireflies.phases) < 2)
 
-unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()
